@@ -45,6 +45,21 @@ class BootStrap {
       }
     }
 
+    def g1 = TekEvent.findByName('Gateway Code Camp')
+    g1.addToVolunteers(new TekUser(fullName: 'Sarah Martin' ,
+        userName: 'sarah',
+        password: '54321',
+        email: 'sarah@martinworld.com',
+        website: 'www.martinworld.com',
+        bio: 'Web designer and Grails afficianado.'))
+    g1.addToVolunteers(new TekUser(fullName: 'Bill Smith',
+        userName: 'Mr_Bill',
+        password: '12345',
+        email: 'mrbill@email.com',
+        website: 'www.mrbillswebsite.com',
+        bio: 'Software developer, claymation artist.'))
+    g1.save()
+
     def event2 = new TekEvent(name: 'Perl Before Swine',
         city: 'Austin, MN' ,
         organizer: TekUser.findByFullName('John Deere'),
